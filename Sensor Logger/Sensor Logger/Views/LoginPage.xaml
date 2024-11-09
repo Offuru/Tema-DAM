@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Sensor_Logger.Views.Login"
-             Title="Login">
+             x:Class="Sensor_Logger.Views.LoginPage"
+             xmlns:viewmodel="clr-namespace:Sensor_Logger.ViewModels"
+             xmlns:converters="clr-namespace:Sensor_Logger.Converters"
+             Title="Login"
+             x:DataType="viewmodel:LoginViewModel">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:UserConverter x:Key="UserConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.3*"/> 
-            <RowDefinition Height="0.7*"/> 
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.7*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"/>
@@ -46,7 +55,15 @@
 
             <Button
                 x:Name="LoginButton"
-                Text="Login"/>
+                Text="Login"
+                Command="{Binding LoginUserCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource UserConverter}">
+                        <Binding Source="{x:Reference UsernameEntry}" Path="Text"/>
+                        <Binding Source="{x:Reference PasswordEntry}" Path="Text"/>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
 
             <Label
                 HorizontalOptions="Center">
@@ -59,8 +76,7 @@
                     </FormattedString>
                 </Label.FormattedText>
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer
-            Command="{Binding SignInCommand}" />
+                    <TapGestureRecognizer/>
                 </Label.GestureRecognizers>
             </Label>
         </VerticalStackLayout>

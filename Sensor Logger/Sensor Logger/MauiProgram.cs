@@ -1,5 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
+using Sensor_Logger.ViewModels;
+using Sensor_Logger.Views;
+using Sensor_Logger.Services;
 
 namespace Sensor_Logger
 {
@@ -13,10 +16,16 @@ namespace Sensor_Logger
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             }).UseMauiCommunityToolkit();
+
+            builder.Services.AddSingleton<LoginService>();
+            builder.Services.AddSingleton<LoginViewModel>();
+            builder.Services.AddSingleton<LoginPage>();
+
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
             return builder.Build();
+
         }
     }
 }
