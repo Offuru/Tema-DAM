@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Sensor_Logger.Views.LoginPage"
+             x:Class="Sensor_Logger.Views.RegisterPage"
              xmlns:viewmodel="clr-namespace:Sensor_Logger.ViewModels"
              xmlns:converters="clr-namespace:Sensor_Logger.Converters"
-             Title="Login"
+             Title="Register"
              x:DataType="viewmodel:LoginViewModel">
-
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:UserConverter x:Key="UserConverter"/>
@@ -53,10 +53,22 @@
                 HorizontalOptions="FillAndExpand"
                 Placeholder="Password"/>
 
+            <Entry
+                x:Name="PasswordConfirmationEntry"
+                ClearButtonVisibility="WhileEditing"
+                IsPassword="True"
+                HorizontalTextAlignment="Start"
+                VerticalTextAlignment="Center"
+                FontAutoScalingEnabled="True"
+                MaxLength="20"
+                Keyboard="Chat"
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Confirm password"/>
+
             <Button
-                x:Name="LoginButton"
-                Text="Login"
-                Command="{Binding LoginUserCommand}">
+                x:Name="RegisterButton"
+                Text="Register"
+                Command="{Binding RegisterUserCommand}">
                 <Button.CommandParameter>
                     <MultiBinding Converter="{StaticResource UserConverter}">
                         <Binding Source="{x:Reference UsernameEntry}" Path="Text"/>
@@ -65,23 +77,6 @@
                 </Button.CommandParameter>
             </Button>
 
-            <Label
-                HorizontalOptions="Center">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="No account? " />
-                        <Span Text="Sign in"
-                  TextColor="Blue"
-                  FontAttributes="Bold">
-                            <Span.GestureRecognizers>
-                                <TapGestureRecognizer
-                        Command="{Binding GoToRegistrationCommand}" />
-                            </Span.GestureRecognizers>
-                        </Span>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
         </VerticalStackLayout>
     </Grid>
-
 </ContentPage>

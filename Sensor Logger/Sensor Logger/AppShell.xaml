@@ -5,12 +5,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Sensor_Logger"
     xmlns:pages="clr-namespace:Sensor_Logger.Views"
+    xmlns:viewmodels="clr-namespace:Sensor_Logger.ViewModels"
     Shell.FlyoutBehavior="Disabled"
     Title="Sensor_Logger">
 
     <ShellContent
-        Title="Home"
+        Title="Login"
         ContentTemplate="{DataTemplate pages:LoginPage}"
-        Route="LoginPage"/>
+        Route="login"/>
 
+    <ShellContent
+        Title="Register"
+        ContentTemplate="{DataTemplate pages:RegisterPage}"
+        Route="register"/>
 </Shell>

@@ -1,4 +1,5 @@
 ﻿using Sensor_Logger.Models;
+using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text.Json;
 
@@ -43,18 +44,69 @@ namespace Sensor_Logger.Services
             return CryptographicOperations.FixedTimeEquals(storedPasswordHash, enteredPasswordHash);
         }
 
-
-
         public async Task<User?> IsValidUser(User user)
         {
-            using var stream = await FileSystem.OpenAppPackageFileAsync(usersFile);
-            using var reader = new StreamReader(stream);
+            string filePath = Path.Combine(FileSystem.AppDataDirectory, usersFile);
 
-            string jsonContent = await reader.ReadToEndAsync();
+            string jsonContent = "[]";
+
+            Debug.WriteLine(filePath);
+
+            if (!File.Exists(filePath))
+            {
+                try
+                {
+                    using FileStream fileStream = File.Create(filePath);
+                    jsonContent = "[]";
+                    using StreamWriter writer = new(fileStream);
+                    await writer.WriteAsync(jsonContent);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex);
+                }
+
+            }
+            else
+            {
+                jsonContent = await File.ReadAllTextAsync(filePath);
+            }  
 
             var users = JsonSerializer.Deserialize<List<User>>(jsonContent);
 
+            if (users.Count == 0)
+                return new User();
+
             return users?.FirstOrDefault(u => u.Username.Equals(user.Username) && VerifyPassword(user.Password, u.Password));
+        }
+
+        public async Task<User?> RegisterUser(User? user)
+        {
+            string filePath = Path.Combine(FileSystem.AppDataDirectory, usersFile);
+
+            if (!File.Exists(filePath))
+            {
+                using FileStream fileStream = File.Create(filePath);
+                using StreamWriter writer = new(fileStream);
+                await writer.WriteAsync("[]");
+            }
+
+            string jsonContent = await File.ReadAllTextAsync(filePath);
+
+            var users = JsonSerializer.Deserialize<List<User>>(jsonContent);
+
+            if (users.Count != 0 && users.FirstOrDefault(u => u.Equals(user)) != null)
+                return null;
+
+            user.Password = GetHashedPassword(user.Password);
+
+            users.Add(user);
+
+            jsonContent = JsonSerializer.Serialize(users);
+
+            await File.WriteAllTextAsync(filePath, jsonContent);
+
+            return user;
         }
     }
 }

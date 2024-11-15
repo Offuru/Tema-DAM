@@ -20,6 +20,7 @@ namespace Sensor_Logger
             builder.Services.AddSingleton<LoginService>();
             builder.Services.AddSingleton<LoginViewModel>();
             builder.Services.AddSingleton<LoginPage>();
+            builder.Services.AddSingleton<RegisterPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();
