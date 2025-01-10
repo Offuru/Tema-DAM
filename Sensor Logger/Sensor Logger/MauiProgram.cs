@@ -3,6 +3,7 @@ using CommunityToolkit.Maui;
 using Sensor_Logger.ViewModels;
 using Sensor_Logger.Views;
 using Sensor_Logger.Services;
+using Sensor_Logger.Controls.Views;
 
 namespace Sensor_Logger
 {
@@ -21,6 +22,7 @@ namespace Sensor_Logger
             builder.Services.AddSingleton<LoginViewModel>();
             builder.Services.AddSingleton<LoginPage>();
             builder.Services.AddSingleton<RegisterPage>();
+            builder.Services.AddSingleton<MainPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();

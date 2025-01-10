@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Sensor_Logger.Views.MainPage"
              xmlns:viewmodel="clr-namespace:Sensor_Logger.ViewModels"
+             xmlns:controls ="clr-namespace:Sensor_Logger.Controls.Views"
              Title="">
     <ContentPage.BindingContext>
         <viewmodel:MainPageViewModel />
@@ -31,18 +32,9 @@
 
         <ContentView Grid.Row="1" x:Name="MainContentView" Content="{Binding CurrentView}" BackgroundColor="Transparent" />
 
-        <ScrollView Orientation="Horizontal" Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout Orientation="Horizontal" Spacing="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <Button Text="Accelerometer" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" />
-                <BoxView WidthRequest="1" Color="Gray" />
-                <Button Text="GPS" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" />
-                <BoxView WidthRequest="1" Color="Gray" />
-                <Button Text="Barometer" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" />
-                <BoxView WidthRequest="1" Color="Gray" />
-                <Button Text="Compass" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" />
-                <BoxView WidthRequest="1" Color="Gray" />
-                <Button Text="Gyroscope" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" />
-            </StackLayout>
-        </ScrollView>
+
+        <controls:SensorsScrollbar
+            AccelerometerCommand="{Binding ChangeToAccelerometerCommand}"
+            Grid.Row="2"/>
     </Grid>
 </ContentPage>
