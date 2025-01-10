@@ -4,7 +4,7 @@
              x:Class="Sensor_Logger.Views.LoginPage"
              xmlns:viewmodel="clr-namespace:Sensor_Logger.ViewModels"
              xmlns:converters="clr-namespace:Sensor_Logger.Converters"
-             Title="Login"
+             Title=""
              x:DataType="viewmodel:LoginViewModel">
 
     <ContentPage.Resources>

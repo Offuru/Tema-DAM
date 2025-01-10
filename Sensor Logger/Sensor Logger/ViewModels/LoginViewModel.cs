@@ -27,6 +27,7 @@ namespace Sensor_Logger.ViewModels
             if (user.Equals(databaseUser))
             {
                 await Shell.Current.CurrentPage.DisplayAlert("Alert", "Valid credentials", "OK");
+                await Shell.Current.GoToAsync("//home");
             }
             else
             {
@@ -48,6 +49,7 @@ namespace Sensor_Logger.ViewModels
             {
                 CurrentUser = databaseUser;
                 await Shell.Current.CurrentPage.DisplayAlert("Alert", "Succesfully registered", "OK");
+                await Shell.Current.GoToAsync("//home");
             }
         }
 

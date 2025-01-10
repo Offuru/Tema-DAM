@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sensor_Logger.Views.MainPage"
+             xmlns:viewmodel="clr-namespace:Sensor_Logger.ViewModels"
+             Title="">
+    <ContentPage.BindingContext>
+        <viewmodel:MainPageViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+
+        <ScrollView Orientation="Horizontal" Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent">
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="18*" />
+                    <ColumnDefinition Width="74*" />
+                    <ColumnDefinition Width="18*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Profile" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" Grid.Column="0" />
+                <Label Text="Sensor Logger" VerticalOptions="FillAndExpand" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="1" />
+                <Button Text="Settings" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" Grid.Column="2" />
+            </Grid>
+        </ScrollView>
+
+        <ContentView Grid.Row="1" x:Name="MainContentView" Content="{Binding CurrentView}" BackgroundColor="Transparent" />
+
+        <ScrollView Orientation="Horizontal" Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal" Spacing="0" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Button Text="Accelerometer" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" />
+                <BoxView WidthRequest="1" Color="Gray" />
+                <Button Text="GPS" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" />
+                <BoxView WidthRequest="1" Color="Gray" />
+                <Button Text="Barometer" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" />
+                <BoxView WidthRequest="1" Color="Gray" />
+                <Button Text="Compass" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" />
+                <BoxView WidthRequest="1" Color="Gray" />
+                <Button Text="Gyroscope" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
