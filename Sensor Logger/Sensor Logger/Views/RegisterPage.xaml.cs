@@ -15,7 +15,6 @@ public partial class RegisterPage : ContentPage
     {
         Shell.Current.GoToAsync("//login");
 
-        // Return true to indicate that you've handled the back button press
         return true;
     }
 }

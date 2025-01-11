@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sensor_Logger.Controls.Views.Settings">
+    <VerticalStackLayout Spacing="10" Padding="10">
+        <Label x:Name="UsernameLabel"
+               Text="{Binding Username, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+               FontSize="18"
+               HorizontalOptions="Center" />
+
+        <VerticalStackLayout
+            Spacing="15" 
+            HorizontalOptions="Center">
+            
+            <Switch IsToggled="{Binding AccelerometerToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}" 
+                    HorizontalOptions="Center"/>
+            <Switch IsToggled="{Binding BarometerToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    HorizontalOptions="Center"/>
+            <Switch IsToggled="{Binding CompassToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    HorizontalOptions="Center"/>
+            <Switch IsToggled="{Binding GyroscopeToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    HorizontalOptions="Center"/>
+            <Switch IsToggled="{Binding GPSToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    HorizontalOptions="Center"/>
+            
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentView>

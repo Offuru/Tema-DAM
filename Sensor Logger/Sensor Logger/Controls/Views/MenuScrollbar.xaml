@@ -2,10 +2,41 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Sensor_Logger.Controls.Views.MenuScrollbar">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView Orientation="Horizontal" 
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="FillAndExpand">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="18*" />
+                <ColumnDefinition Width="64*" />
+                <ColumnDefinition Width="18*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Text="Profile"
+                    Command="{Binding HomeCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    CornerRadius="0"
+                    BorderColor="Gray"
+                    BorderWidth="1"
+                    Grid.Column="0" />
+
+            <Label Text="Sensor Logger"
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   MinimumWidthRequest="246"
+                   Grid.Column="1" />
+            
+            <Button Text="Settings"
+                    Command="{Binding SettingsCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    CornerRadius="0"
+                    BorderColor="Gray"
+                    BorderWidth="1"
+                    Grid.Column="2" />
+        </Grid>
+    </ScrollView>
 </ContentView>

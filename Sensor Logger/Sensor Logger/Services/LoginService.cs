@@ -1,16 +1,20 @@
-﻿using Sensor_Logger.Models;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Sensor_Logger.Models;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text.Json;
 
 namespace Sensor_Logger.Services
 {
-    public class LoginService
+    public partial class LoginService : ObservableObject
     {
         private const int SaltSize = 16;
         private const int KeySize = 32;
         private const int Iterations = 10000;
         private const string usersFile = "users.json";
+
+        [ObservableProperty]
+        private User currentUser;
 
         private static string GetHashedPassword(string password)
         {

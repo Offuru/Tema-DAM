@@ -27,5 +27,10 @@ namespace Sensor_Logger.Models
             var other = obj as User;
             return other.Username == Username;
         }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Username, Password);
+        }
     }
 }

@@ -26,12 +26,13 @@ namespace Sensor_Logger.ViewModels
             var databaseUser = await _loginService.IsValidUser(user);
             if (user.Equals(databaseUser))
             {
+                CurrentUser = databaseUser;
+                _loginService.CurrentUser = databaseUser;
                 await Shell.Current.CurrentPage.DisplayAlert("Alert", "Valid credentials", "OK");
                 await Shell.Current.GoToAsync("//home");
             }
             else
             {
-                CurrentUser = databaseUser;
                 await Shell.Current.CurrentPage.DisplayAlert("Alert", "Invalid credentials", "OK");
             }
         }
@@ -48,6 +49,7 @@ namespace Sensor_Logger.ViewModels
             else
             {
                 CurrentUser = databaseUser;
+                _loginService.CurrentUser = databaseUser;
                 await Shell.Current.CurrentPage.DisplayAlert("Alert", "Succesfully registered", "OK");
                 await Shell.Current.GoToAsync("//home");
             }

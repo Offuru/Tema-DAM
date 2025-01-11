@@ -8,69 +8,67 @@ public partial class SensorsScrollbar : ContentView
     public static readonly BindableProperty AccelerometerCommandProperty =
         BindableProperty.Create(
             nameof(AccelerometerCommand),
-            typeof(Command),
-            typeof(SensorsScrollbar),
-            default(Command));
+            typeof(ICommand),
+            typeof(SensorsScrollbar));
 
-    public Command AccelerometerCommand
+    public ICommand AccelerometerCommand
     {
-        get => (Command)GetValue(AccelerometerCommandProperty);
+        get => (ICommand)GetValue(AccelerometerCommandProperty);
         set => SetValue(AccelerometerCommandProperty, value);
     }
 
     public static readonly BindableProperty GpsCommandProperty =
         BindableProperty.Create(
             nameof(GpsCommand),
-            typeof(Command),
+            typeof(ICommand),
             typeof(SensorsScrollbar),
-            default(Command));
+            default(ICommand));
 
-    public Command GpsCommand
+    public ICommand GpsCommand
     {
-        get => (Command)GetValue(GpsCommandProperty);
+        get => (ICommand)GetValue(GpsCommandProperty);
         set => SetValue(GpsCommandProperty, value);
     }
 
     public static readonly BindableProperty BarometerCommandProperty =
         BindableProperty.Create(
             nameof(BarometerCommand),
-            typeof(Command),
+            typeof(ICommand),
             typeof(SensorsScrollbar),
-            default(Command));
+            default(ICommand));
 
-    public Command BarometerCommand
+    public ICommand BarometerCommand
     {
-        get => (Command)GetValue(BarometerCommandProperty);
+        get => (ICommand)GetValue(BarometerCommandProperty);
         set => SetValue(BarometerCommandProperty, value);
     }
 
     public static readonly BindableProperty CompassCommandProperty =
         BindableProperty.Create(
             nameof(CompassCommand),
-            typeof(Command),
+            typeof(ICommand),
             typeof(SensorsScrollbar),
-            default(Command));
+            default(ICommand));
 
-    public Command CompassCommand
+    public ICommand CompassCommand
     {
-        get => (Command)GetValue(CompassCommandProperty);
+        get => (ICommand)GetValue(CompassCommandProperty);
         set => SetValue(CompassCommandProperty, value);
     }
 
     public static readonly BindableProperty GyroscopeCommandProperty =
         BindableProperty.Create(
             nameof(GyroscopeCommand),
-            typeof(Command),
+            typeof(ICommand),
             typeof(SensorsScrollbar),
-            default(Command));
+            default(ICommand));
 
-    public Command GyroscopeCommand
+    public ICommand GyroscopeCommand
     {
-        get => (Command)GetValue(GyroscopeCommandProperty);
+        get => (ICommand)GetValue(GyroscopeCommandProperty);
         set => SetValue(GyroscopeCommandProperty, value);
     }
 
-    private ICommand? accelerometerCommand;
 	public SensorsScrollbar()
 	{
 		InitializeComponent();

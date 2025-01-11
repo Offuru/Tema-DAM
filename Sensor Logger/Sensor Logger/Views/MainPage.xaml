@@ -4,37 +4,45 @@
              x:Class="Sensor_Logger.Views.MainPage"
              xmlns:viewmodel="clr-namespace:Sensor_Logger.ViewModels"
              xmlns:controls ="clr-namespace:Sensor_Logger.Controls.Views"
+             x:DataType="viewmodel:MainPageViewModel"
              Title="">
-    <ContentPage.BindingContext>
-        <viewmodel:MainPageViewModel />
-    </ContentPage.BindingContext>
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*" />
-            <RowDefinition Height="80*" />
-            <RowDefinition Height="10*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="90*" />
+            <RowDefinition Height="5*" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
 
-        <ScrollView Orientation="Horizontal" Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent">
-            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="18*" />
-                    <ColumnDefinition Width="74*" />
-                    <ColumnDefinition Width="18*" />
-                </Grid.ColumnDefinitions>
+        <controls:MenuScrollbar
+            Grid.Row="0"
+            BackgroundColor="AliceBlue"
+            HomeCommand="{Binding HomeButtonPressCommand}"
+            SettingsCommand="{Binding SettingsButtonPressCommand}"/>
 
-                <Button Text="Profile" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" Grid.Column="0" />
-                <Label Text="Sensor Logger" VerticalOptions="FillAndExpand" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="1" />
-                <Button Text="Settings" VerticalOptions="FillAndExpand" CornerRadius="0" BorderColor="Gray" BorderWidth="1" Grid.Column="2" />
-            </Grid>
-        </ScrollView>
-
-        <ContentView Grid.Row="1" x:Name="MainContentView" Content="{Binding CurrentView}" BackgroundColor="Transparent" />
-
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Grid.Row="1"
+            BackgroundColor="Green">
+            
+            <ContentView 
+                     x:Name="MainContentView"
+                     Content="{Binding CurrentView}"/>
+        </Grid>
 
         <controls:SensorsScrollbar
-            AccelerometerCommand="{Binding ChangeToAccelerometerCommand}"
+            BackgroundColor="Brown"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            AccelerometerCommand="{Binding AccelerometerButtonPressCommand}"
+            BarometerCommand="{Binding BarometerButtonPressCommand}"
+            CompassCommand="{Binding CompassButtonPressCommand}"
+            GpsCommand="{Binding GPSButtonPressCommand}"
+            GyroscopeCommand="{Binding GyroscopeButtonPressCommand}"
             Grid.Row="2"/>
     </Grid>
 </ContentPage>
