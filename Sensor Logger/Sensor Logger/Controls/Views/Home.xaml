@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sensor_Logger.Controls.Views.Home">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+
+        <VerticalStackLayout
+            Spacing="10"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Grid.Column="1"
+            Grid.Row="1"
+            MinimumWidthRequest="200">
+
+            <Frame BackgroundColor="#333333" BorderColor="#444444" CornerRadius="5" Padding="8" HorizontalOptions="Center">
+                <Label Text="{Binding UserText, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}" TextColor="White" FontSize="Medium" WidthRequest="300" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+
+            <Frame BackgroundColor="#333333" BorderColor="#444444" CornerRadius="5" Padding="8" HorizontalOptions="Center">
+                <Label Text="{Binding AccelerometerSupportedText, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}" TextColor="White" FontSize="Medium" WidthRequest="300" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+
+            <Frame BackgroundColor="#333333" BorderColor="#444444" CornerRadius="5" Padding="8" HorizontalOptions="Center">
+                <Label Text="{Binding BarometerSupportedText, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}" TextColor="White" FontSize="Medium" WidthRequest="300" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+
+            <Frame BackgroundColor="#333333" BorderColor="#444444" CornerRadius="5" Padding="8" HorizontalOptions="Center">
+                <Label Text="{Binding CompassSupportedText, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}" TextColor="White" FontSize="Medium" WidthRequest="300" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+
+            <Frame BackgroundColor="#333333" BorderColor="#444444" CornerRadius="5" Padding="8" HorizontalOptions="Center">
+                <Label Text="{Binding GyroscopeSupportedText, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}" TextColor="White" FontSize="Medium" WidthRequest="300" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentView>

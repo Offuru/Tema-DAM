@@ -13,7 +13,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid>
+    <Grid BackgroundColor="#1E1E1E">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.7*"/>
@@ -30,33 +30,48 @@
             Grid.Column="1"
             Grid.Row="1"
             MinimumWidthRequest="200">
-            <Entry
-                x:Name="UsernameEntry"
-                ClearButtonVisibility="WhileEditing"
-                HorizontalTextAlignment="Start"
-                VerticalTextAlignment="Center"
-                FontAutoScalingEnabled="True"
-                MaxLength="20"
-                Keyboard="Chat"
-                HorizontalOptions="FillAndExpand"
-                Placeholder="Username"/>
 
-            <Entry
-                x:Name="PasswordEntry"
-                ClearButtonVisibility="WhileEditing"
-                IsPassword="True"
-                HorizontalTextAlignment="Start"
-                VerticalTextAlignment="Center"
-                FontAutoScalingEnabled="True"
-                MaxLength="20"
-                Keyboard="Chat"
-                HorizontalOptions="FillAndExpand"
-                Placeholder="Password"/>
+            <!-- Username Entry -->
+            <Frame BackgroundColor="#2A2A2A" CornerRadius="5" Padding="10" HasShadow="False">
+                <Entry
+                    x:Name="UsernameEntry"
+                    ClearButtonVisibility="WhileEditing"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+                    FontSize="18"
+                    TextColor="White"
+                    Placeholder="Username"
+                    PlaceholderColor="#B0B0B0"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="FillAndExpand"/>
+            </Frame>
 
+            <!-- Password Entry -->
+            <Frame BackgroundColor="#2A2A2A" CornerRadius="5" Padding="10" HasShadow="False">
+                <Entry
+                    x:Name="PasswordEntry"
+                    ClearButtonVisibility="WhileEditing"
+                    IsPassword="True"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+                    FontSize="18"
+                    TextColor="White"
+                    Placeholder="Password"
+                    PlaceholderColor="#B0B0B0"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="FillAndExpand"/>
+            </Frame>
+
+            <!-- Login Button -->
             <Button
                 x:Name="LoginButton"
                 Text="Login"
-                Command="{Binding LoginUserCommand}">
+                Command="{Binding LoginUserCommand}"
+                FontSize="18"
+                TextColor="White"
+                BackgroundColor="#007ACC"
+                CornerRadius="5"
+                Padding="10">
                 <Button.CommandParameter>
                     <MultiBinding Converter="{StaticResource UserConverter}">
                         <Binding Source="{x:Reference UsernameEntry}" Path="Text"/>
@@ -65,17 +80,20 @@
                 </Button.CommandParameter>
             </Button>
 
+            <!-- Sign In Label -->
             <Label
-                HorizontalOptions="Center">
+                HorizontalOptions="Center"
+                FontSize="16"
+                TextColor="White">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="No account? " />
                         <Span Text="Sign in"
-                  TextColor="Blue"
-                  FontAttributes="Bold">
+                              TextColor="#007ACC"
+                              FontAttributes="Bold">
                             <Span.GestureRecognizers>
                                 <TapGestureRecognizer
-                        Command="{Binding GoToRegistrationCommand}" />
+                                    Command="{Binding GoToRegistrationCommand}" />
                             </Span.GestureRecognizers>
                         </Span>
                     </FormattedString>

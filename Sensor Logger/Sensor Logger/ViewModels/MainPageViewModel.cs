@@ -19,9 +19,32 @@ namespace Sensor_Logger.ViewModels
             SetupCompass();
             SetupGps();
             SetupGyroscope();
+            SetupHome();
         }
 
         #region Setup
+
+        public void SetupHome()
+        {
+            Home = new Home()
+            {
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+            };
+
+            User = $"User: {_loginService.CurrentUser.Username}";
+
+            Home.SetBinding(Controls.Views.Home.UserTextProperty,
+                new Binding(nameof(User), mode: BindingMode.TwoWay));
+            Home.SetBinding(Controls.Views.Home.AccelerometerSupportedTextProperty,
+                new Binding(nameof(IsAccelerometerAvailable), mode: BindingMode.TwoWay));
+            Home.SetBinding(Controls.Views.Home.BarometerSupportedTextProperty,
+                new Binding(nameof(IsBarometerAvailable), mode: BindingMode.TwoWay));
+            Home.SetBinding(Controls.Views.Home.CompassSupportedTextProperty,
+                new Binding(nameof(IsCompassAvailable), mode: BindingMode.TwoWay));
+            Home.SetBinding(Controls.Views.Home.GyroscopeSupportedTextProperty,
+                new Binding(nameof(IsGyroscopeAvailable), mode: BindingMode.TwoWay));
+        }
 
         public void SetupSettings()
         {
@@ -49,6 +72,8 @@ namespace Sensor_Logger.ViewModels
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center
             };
+
+            
 
             Acceleration.SetBinding(Controls.Views.Acceleration.XAxisLabelTextProperty,
                 new Binding(nameof(AccX)));            
@@ -142,6 +167,7 @@ namespace Sensor_Logger.ViewModels
 
         private SensorsService _sensorService;
 
+        
         #region Settings
 
         [ObservableProperty]
@@ -239,6 +265,28 @@ namespace Sensor_Logger.ViewModels
         [ObservableProperty]
         private string momentumZ;
 
+        #endregion
+
+        #region Home
+
+        [ObservableProperty]
+        private ContentView home;
+
+        [ObservableProperty]
+        private string user;
+
+        [ObservableProperty]
+        private string isAccelerometerAvailable = Accelerometer.IsSupported ? "Accelerometer is supported" : "Accelerometer is not supported";
+
+        [ObservableProperty]
+        private string isBarometerAvailable = Magnetometer.IsSupported ? "Magnetometer is supported" : "Magnetometer is not supported";
+
+        [ObservableProperty]
+        private string isCompassAvailable = Microsoft.Maui.Devices.Sensors.Compass.IsSupported ? "Compass is supported" : "Compass is not supported";
+
+        [ObservableProperty]
+        private string isGyroscopeAvailable = Microsoft.Maui.Devices.Sensors.Gyroscope.IsSupported ? "Gyroscope is supported" : "Gyroscope is not supported";
+        
         #endregion
 
         #endregion
@@ -458,10 +506,7 @@ namespace Sensor_Logger.ViewModels
         private void OnHomeButtonPress()
         {
             Debug.WriteLine("Button pressed");
-            CurrentView = new ContentView
-            {
-                Content = new Label { Text = "Home" },
-            };
+            CurrentView = Home;
         }
 
         #endregion

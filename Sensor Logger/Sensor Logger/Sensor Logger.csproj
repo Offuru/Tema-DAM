@@ -94,6 +94,9 @@
 	  <MauiXaml Update="Controls\Views\Gyroscope.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Controls\Views\Home.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Controls\Views\MenuScrollbar.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
