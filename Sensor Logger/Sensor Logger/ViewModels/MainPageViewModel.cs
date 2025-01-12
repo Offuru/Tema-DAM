@@ -311,9 +311,9 @@ namespace Sensor_Logger.ViewModels
 
             timer.Tick += (s, e) =>
             {
-                AccX = $"X: {_sensorService.AccelerationReading[0]} m/s^2";
-                AccY = $"Y: {_sensorService.AccelerationReading[1]} m/s^2";
-                AccZ = $"Z: {_sensorService.AccelerationReading[2]} m/s^2";
+                AccX = $"X: {_sensorService.AccelerationReading[0]} G";
+                AccY = $"Y: {_sensorService.AccelerationReading[1]} G";
+                AccZ = $"Z: {_sensorService.AccelerationReading[2]} G";
             };
 
             while (true)

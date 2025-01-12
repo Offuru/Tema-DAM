@@ -24,7 +24,9 @@
                     MinimumWidthRequest="80"
                     BorderWidth="1"
                     Grid.Column="0">
-
+                <Button.ImageSource>
+                    <FileImageSource File="home.png"/>
+                </Button.ImageSource>
             </Button>
 
             <Label Text="Sensor Logger"
@@ -48,7 +50,10 @@
                     MinimumWidthRequest="80"
                     BorderWidth="1"
                     Grid.Column="2">
-  
+                <Button.ImageSource>
+                    <FileImageSource File="settings.png"/>
+                </Button.ImageSource>
+
             </Button>
         </Grid>
     </ScrollView>

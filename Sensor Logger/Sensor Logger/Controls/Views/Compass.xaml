@@ -28,7 +28,7 @@
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="Center"
                WidthRequest="300">
-            <Label Text="{Binding CompassText, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+            <Label Text="{Binding CompassText, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Center"
                    FontSize="Medium"

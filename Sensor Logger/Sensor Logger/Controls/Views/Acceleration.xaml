@@ -28,7 +28,7 @@
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="Center"
                WidthRequest="300">
-            <Label Text="{Binding XAxisLabelText, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+            <Label Text="{Binding XAxisLabelText, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Center"
                    FontSize="Medium"
@@ -42,7 +42,7 @@
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="Center"
                WidthRequest="300">
-            <Label Text="{Binding YAxisLabelText, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+            <Label Text="{Binding YAxisLabelText, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Center"
                    FontSize="Medium"
@@ -56,7 +56,7 @@
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="Center"
                WidthRequest="300">
-            <Label Text="{Binding ZAxisLabelText, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+            <Label Text="{Binding ZAxisLabelText, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Center"
                    FontSize="Medium"

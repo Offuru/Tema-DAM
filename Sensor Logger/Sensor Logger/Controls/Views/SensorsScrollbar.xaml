@@ -19,7 +19,9 @@
                     MaximumWidthRequest="78.5"
                     BorderWidth="1"
                     Grid.Column="0">
- 
+                <Button.ImageSource>
+                    <FileImageSource File="accelerometer.png"/>
+                </Button.ImageSource>
             </Button>
 
             <Button
@@ -34,7 +36,9 @@
                     MaximumWidthRequest="78.5"
                     BorderWidth="1"
                     Grid.Column="1">
-
+                <Button.ImageSource>
+                    <FileImageSource File="gps.png"/>
+                </Button.ImageSource>
             </Button>
 
             <Button
@@ -49,7 +53,9 @@
                     MaximumWidthRequest="78.5"
                     BorderWidth="1"
                     Grid.Column="2">
-
+                <Button.ImageSource>
+                    <FileImageSource File="magnet.png"/>
+                </Button.ImageSource>
             </Button>
 
             <Button
@@ -64,7 +70,9 @@
                     MaximumWidthRequest="78.5"
                     BorderWidth="1"
                     Grid.Column="3">
-
+                <Button.ImageSource>
+                    <FileImageSource File="compass.png"/>
+                </Button.ImageSource>
             </Button>
 
             <Button
@@ -79,7 +87,9 @@
                     MaximumWidthRequest="78.5"
                     BorderWidth="1"
                     Grid.Column="4">
-
+                <Button.ImageSource>
+                    <FileImageSource File="gyroscope.png"/>
+                </Button.ImageSource>
             </Button>
         </Grid>
     </ScrollView>
