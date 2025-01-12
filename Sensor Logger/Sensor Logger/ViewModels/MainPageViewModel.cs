@@ -16,7 +16,8 @@ namespace Sensor_Logger.ViewModels
             
             settings = new Settings()
             {
-                Username = _loginService.CurrentUser.Username,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
             };
             settings.SetBinding(Controls.Views.Settings.AccelerometerToggledProperty,
                 new Binding(nameof(AccelerometerToggled), mode: BindingMode.TwoWay));
@@ -38,13 +39,13 @@ namespace Sensor_Logger.ViewModels
         private LoginService _loginService;
 
         [ObservableProperty]
-        private bool accelerometerToggled = false;
+        private bool accelerometerToggled = true;
         
         [ObservableProperty]
         private bool barometerToggled = false;
 
         [ObservableProperty]
-        private bool gpsToggled = false;
+        private bool gpsToggled = true;
         
         [ObservableProperty]
         private bool compassToggled = false;

@@ -3,26 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Sensor_Logger.Controls.Views.Settings">
     <VerticalStackLayout Spacing="10" Padding="10">
-        <Label x:Name="UsernameLabel"
-               Text="{Binding Username, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-               FontSize="18"
-               HorizontalOptions="Center" />
 
-        <VerticalStackLayout
-            Spacing="15" 
-            HorizontalOptions="Center">
-            
-            <Switch IsToggled="{Binding AccelerometerToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}" 
-                    HorizontalOptions="Center"/>
-            <Switch IsToggled="{Binding BarometerToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                    HorizontalOptions="Center"/>
-            <Switch IsToggled="{Binding CompassToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                    HorizontalOptions="Center"/>
-            <Switch IsToggled="{Binding GyroscopeToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                    HorizontalOptions="Center"/>
-            <Switch IsToggled="{Binding GPSToggled, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                    HorizontalOptions="Center"/>
-            
+        <VerticalStackLayout Spacing="15" HorizontalOptions="Center">
+
+            <!-- Accelerometer -->
+            <Frame BorderColor="Gray" Padding="10" CornerRadius="5" HorizontalOptions="Center" WidthRequest="300">
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    <Label Text="Accelerometer" VerticalOptions="Center" Padding="0,0,120,0" />
+                    <Switch IsToggled="{Binding AccelerometerToggled, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}" HorizontalOptions="End" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- Barometer -->
+            <Frame BorderColor="Gray" Padding="10" CornerRadius="5" HorizontalOptions="Center" WidthRequest="300">
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    <Label Text="Barometer" VerticalOptions="Center" Padding="0,0,140,0" />
+                    <Switch IsToggled="{Binding BarometerToggled, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}" HorizontalOptions="End" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- Compass -->
+            <Frame BorderColor="Gray" Padding="10" CornerRadius="5" HorizontalOptions="Center" WidthRequest="300">
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    <Label Text="Compass" VerticalOptions="Center" Padding="0,0,150,0" />
+                    <Switch IsToggled="{Binding CompassToggled, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}" HorizontalOptions="End" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- Gyroscope -->
+            <Frame BorderColor="Gray" Padding="10" CornerRadius="5" HorizontalOptions="Center" WidthRequest="300">
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    <Label Text="Gyroscope" VerticalOptions="Center" Padding="0,0,138,0" />
+                    <Switch IsToggled="{Binding GyroscopeToggled, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}" HorizontalOptions="End" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- GPS -->
+            <Frame BorderColor="Gray" Padding="10" CornerRadius="5" HorizontalOptions="Center" WidthRequest="300">
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    <Label Text="GPS" VerticalOptions="Center" Padding="0,0,180,0" />
+                    <Switch IsToggled="{Binding GPSToggled, Source={RelativeSource AncestorType={x:Type ContentView}, AncestorLevel=2}}" HorizontalOptions="End" />
+                </HorizontalStackLayout>
+            </Frame>
+
         </VerticalStackLayout>
+
+
+
     </VerticalStackLayout>
 </ContentView>

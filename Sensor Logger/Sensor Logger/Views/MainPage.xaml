@@ -9,26 +9,23 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*" />
-            <RowDefinition Height="90*" />
-            <RowDefinition Height="5*" />
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="86*" />
+            <RowDefinition Height="7*" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
 
         <controls:MenuScrollbar
             Grid.Row="0"
+            Padding="0"
+            Margin="0"
             BackgroundColor="AliceBlue"
             HomeCommand="{Binding HomeButtonPressCommand}"
             SettingsCommand="{Binding SettingsButtonPressCommand}"/>
 
         <Grid
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand"
             Grid.Row="1"
             BackgroundColor="Green">
-            
+
             <ContentView 
                      x:Name="MainContentView"
                      Content="{Binding CurrentView}"/>
@@ -36,8 +33,6 @@
 
         <controls:SensorsScrollbar
             BackgroundColor="Brown"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand"
             AccelerometerCommand="{Binding AccelerometerButtonPressCommand}"
             BarometerCommand="{Binding BarometerButtonPressCommand}"
             CompassCommand="{Binding CompassButtonPressCommand}"

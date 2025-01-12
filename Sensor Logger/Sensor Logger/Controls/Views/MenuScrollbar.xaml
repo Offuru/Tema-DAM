@@ -2,10 +2,11 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Sensor_Logger.Controls.Views.MenuScrollbar">
-    <ScrollView Orientation="Horizontal" 
-                HorizontalOptions="FillAndExpand" 
-                VerticalOptions="FillAndExpand">
-        <Grid>
+    <ScrollView Orientation="Horizontal"
+                BackgroundColor="ForestGreen">
+        <Grid
+            RowDefinitions="*"
+            BackgroundColor="White">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="18*" />
                 <ColumnDefinition Width="64*" />
@@ -14,27 +15,26 @@
 
             <Button Text="Profile"
                     Command="{Binding HomeCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                    VerticalOptions="FillAndExpand"
-                    HorizontalOptions="FillAndExpand"
                     CornerRadius="0"
                     BorderColor="Gray"
+                    MinimumHeightRequest="100"
+                    MinimumWidthRequest="80"
                     BorderWidth="1"
                     Grid.Column="0" />
 
             <Label Text="Sensor Logger"
-                   VerticalOptions="FillAndExpand"
-                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="Red"
+                   Padding="0"
+                   MinimumWidthRequest="232.5"
                    VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center"
-                   MinimumWidthRequest="246"
                    Grid.Column="1" />
             
             <Button Text="Settings"
                     Command="{Binding SettingsCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                    VerticalOptions="FillAndExpand"
-                    HorizontalOptions="FillAndExpand"
                     CornerRadius="0"
                     BorderColor="Gray"
+                    MinimumWidthRequest="80"
                     BorderWidth="1"
                     Grid.Column="2" />
         </Grid>
