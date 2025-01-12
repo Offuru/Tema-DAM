@@ -2,41 +2,54 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Sensor_Logger.Controls.Views.MenuScrollbar">
-    <ScrollView Orientation="Horizontal"
-                BackgroundColor="ForestGreen">
+    <ScrollView Orientation="Horizontal">
         <Grid
             RowDefinitions="*"
-            BackgroundColor="White">
+            BackgroundColor="#F5F5F5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="18*" />
                 <ColumnDefinition Width="64*" />
                 <ColumnDefinition Width="18*" />
             </Grid.ColumnDefinitions>
 
-            <Button Text="Profile"
+            <Button
                     Command="{Binding HomeCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                    CornerRadius="0"
-                    BorderColor="Gray"
+                    CornerRadius="10"
+                    BorderColor="#D1D1D1"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
                     MinimumHeightRequest="100"
                     MinimumWidthRequest="80"
                     BorderWidth="1"
-                    Grid.Column="0" />
+                    Grid.Column="0">
+
+            </Button>
 
             <Label Text="Sensor Logger"
-                   BackgroundColor="Red"
                    Padding="0"
-                   MinimumWidthRequest="232.5"
+                   MinimumWidthRequest="224"
                    VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center"
+                   TextColor="#333333"
+                   FontSize="20"
+                   FontAttributes="Bold"
                    Grid.Column="1" />
-            
-            <Button Text="Settings"
+
+            <Button
                     Command="{Binding SettingsCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                    CornerRadius="0"
-                    BorderColor="Gray"
+                    CornerRadius="10"
+                    BorderColor="#D1D1D1"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
                     MinimumWidthRequest="80"
                     BorderWidth="1"
-                    Grid.Column="2" />
+                    Grid.Column="2">
+  
+            </Button>
         </Grid>
     </ScrollView>
 </ContentView>

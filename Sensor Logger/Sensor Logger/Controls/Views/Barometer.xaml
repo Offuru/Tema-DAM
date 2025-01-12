@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sensor_Logger.Controls.Views.Barometer">
+    <VerticalStackLayout Padding="20" Spacing="15"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         BackgroundColor="#121212">
+
+        <Frame BackgroundColor="#333333"
+               BorderColor="#444444"
+               CornerRadius="5"
+               Padding="8"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Center"
+               WidthRequest="300">
+            <Label Text="Current barometer reading:"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                   FontSize="Medium"
+                   TextColor="White" />
+        </Frame>
+
+        <Frame BackgroundColor="#333333"
+               BorderColor="#444444"
+               CornerRadius="5"
+               Padding="8"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Center"
+               WidthRequest="300">
+            <Label Text="{Binding XMagnetometerText, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                   FontSize="Medium"
+                   TextColor="White" />
+        </Frame>
+
+        <Frame BackgroundColor="#333333"
+               BorderColor="#444444"
+               CornerRadius="5"
+               Padding="8"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Center"
+               WidthRequest="300">
+            <Label Text="{Binding YMagnetometerText, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                   FontSize="Medium"
+                   TextColor="White" />
+        </Frame>
+
+        <Frame BackgroundColor="#333333"
+               BorderColor="#444444"
+               CornerRadius="5"
+               Padding="8"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Center"
+               WidthRequest="300">
+            <Label Text="{Binding ZMagnetometerText, Source={RelativeSource AncestorType={x:Type ContentView}}}"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                   FontSize="Medium"
+                   TextColor="White" />
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentView>

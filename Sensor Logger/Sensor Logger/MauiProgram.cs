@@ -4,6 +4,7 @@ using Sensor_Logger.ViewModels;
 using Sensor_Logger.Views;
 using Sensor_Logger.Services;
 using Sensor_Logger.Controls.Views;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace Sensor_Logger
 {
@@ -16,12 +17,14 @@ namespace Sensor_Logger
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-            }).UseMauiCommunityToolkit();
+            }).UseMauiCommunityToolkit()
+            .UseSkiaSharp();
 
             builder.Services.AddSingleton<LoginService>();
             builder.Services.AddSingleton<LoginViewModel>();
             builder.Services.AddSingleton<LoginPage>();
             builder.Services.AddSingleton<RegisterPage>();
+            builder.Services.AddSingleton<SensorsService>();
             builder.Services.AddSingleton<MainPageViewModel>();
             builder.Services.AddSingleton<MainPage>();
 

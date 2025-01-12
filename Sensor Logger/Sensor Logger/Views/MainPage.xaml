@@ -18,13 +18,11 @@
             Grid.Row="0"
             Padding="0"
             Margin="0"
-            BackgroundColor="AliceBlue"
             HomeCommand="{Binding HomeButtonPressCommand}"
             SettingsCommand="{Binding SettingsButtonPressCommand}"/>
 
         <Grid
-            Grid.Row="1"
-            BackgroundColor="Green">
+            Grid.Row="1">
 
             <ContentView 
                      x:Name="MainContentView"
@@ -32,7 +30,6 @@
         </Grid>
 
         <controls:SensorsScrollbar
-            BackgroundColor="Brown"
             AccelerometerCommand="{Binding AccelerometerButtonPressCommand}"
             BarometerCommand="{Binding BarometerButtonPressCommand}"
             CompassCommand="{Binding CompassButtonPressCommand}"

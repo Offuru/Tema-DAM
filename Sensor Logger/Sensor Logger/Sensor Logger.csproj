@@ -57,6 +57,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\accelerometer.png" />
+	  <None Remove="Resources\Images\compass.png" />
+	  <None Remove="Resources\Images\gps.png" />
+	  <None Remove="Resources\Images\gyroscope.png" />
+	  <None Remove="Resources\Images\home.png" />
+	  <None Remove="Resources\Images\magnet.png" />
+	  <None Remove="Resources\Images\settings.png" />
 	  <None Remove="Resources\Raw\users.json" />
 	</ItemGroup>
 
@@ -66,9 +73,27 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="SkiaSharp" Version="3.116.1" />
+		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="3.116.1" />
+		<PackageReference Include="SkiaSharp.Views.Maui.Core" Version="3.116.1" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Controls\Views\Acceleration.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\Views\Barometer.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\Views\Compass.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\Views\GPS.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\Views\Gyroscope.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Controls\Views\MenuScrollbar.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

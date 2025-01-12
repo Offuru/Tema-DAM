@@ -6,53 +6,82 @@
     <ScrollView Orientation="Horizontal">
         <Grid ColumnDefinitions="*,*,*,*,*">
 
-            <Button Text="Accelerometer"
+            <Button
                     Command="{Binding AccelerometerCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                    CornerRadius="0"
-                    BorderColor="Gray"
+                    CornerRadius="10"
+                    BorderColor="#A0A0A0"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
                     MinimumHeightRequest="100"
                     MinimumWidthRequest="78.5"
                     MaximumWidthRequest="78.5"
                     BorderWidth="1"
-                    Grid.Column="0" />
+                    Grid.Column="0">
+ 
+            </Button>
 
-            <Button Text="GPS"
+            <Button
                     Command="{Binding GpsCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                    CornerRadius="0"
-                    BorderColor="Gray"
+                    CornerRadius="10"
+                    BorderColor="#A0A0A0"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
                     MinimumWidthRequest="78.5"
                     MaximumWidthRequest="78.5"
                     BorderWidth="1"
-                    Grid.Column="1" />
+                    Grid.Column="1">
 
-            <Button Text="Barometer"
+            </Button>
+
+            <Button
                     Command="{Binding BarometerCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                    CornerRadius="0"
-                    BorderColor="Gray"
+                    CornerRadius="10"
+                    BorderColor="#A0A0A0"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
                     MinimumWidthRequest="78.5"
                     MaximumWidthRequest="78.5"
                     BorderWidth="1"
-                    Grid.Column="2" />
+                    Grid.Column="2">
 
-            <Button Text="Compass"
+            </Button>
+
+            <Button
                     Command="{Binding CompassCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                    CornerRadius="0"
-                    BorderColor="Gray"
+                    CornerRadius="10"
+                    BorderColor="#A0A0A0"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
                     MinimumWidthRequest="78.5"
                     MaximumWidthRequest="78.5"
                     BorderWidth="1"
-                    Grid.Column="3" />
+                    Grid.Column="3">
 
-            <Button Text="Gyroscope"
+            </Button>
+
+            <Button
                     Command="{Binding GyroscopeCommand, Source={RelativeSource AncestorType={x:Type ContentView}}}"
-                    CornerRadius="0"
-                    BorderColor="Gray"
+                    CornerRadius="10"
+                    BorderColor="#A0A0A0"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    FontSize="16"
+                    FontAttributes="Bold"
                     MinimumWidthRequest="78.5"
                     MaximumWidthRequest="78.5"
                     BorderWidth="1"
-                    Grid.Column="4" />
+                    Grid.Column="4">
+
+            </Button>
         </Grid>
     </ScrollView>
-
 
 </ContentView>
